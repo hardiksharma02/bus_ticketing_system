@@ -2,6 +2,15 @@ from tkinter import *
 root=Tk()
 w,k=root.winfo_screenwidth(),root.winfo_screenheight()
 root.geometry('%dx%d+0+0'%(w,k))
+def book():
+    Button(root,text="Fill Passanger Details to Book Bus Ticket")
+def Show():
+    Label(root,text="Select Bus",font='Arial 14 bold',fg='Green').grid(row=5,column=1,sticky=E)
+    Label(root,text="Operator",font='Arial 14 bold',fg='Green').grid(row=5,column=2,sticky=E)
+    Label(root,text="Bus Type",font='Arial 14 bold',fg='Green').grid(row=5,column=3,sticky=E)
+    Label(root,text="Available/Capacity",font='Arial 14 bold',fg='Green').grid(row=5,column=4,sticky=E)
+    Label(root,text="Fare",font='Arial 14 bold',fg='Green').grid(row=5,column=5,sticky=E)
+    Button(root,text="Proceed To Book",font='Arial 14 bold',fg='Black',bg='Green').grid(row=6,column=6,sticky=E)
 root.title("Bus Ticketing System")
 img=PhotoImage(file='.\\Bus_for_project.png')
 Label(root,image=img).grid(row=0,column=1,columnspan=8,padx=w//2.5)
@@ -11,9 +20,10 @@ Label(root,text="To",font='Arial 14 bold',fg="black").grid(row=3,column=1,sticky
 Entry(root).grid(row=3,column=2,sticky=W)
 Label(root,text="From",font='Arial 14 bold').grid(row=3,column=3,sticky=E)
 Entry(root).grid(row=3,column=4,sticky=W)
-Label(root,text="Journey",font='Arial 14 bold').grid(row=3,column=5,sticky=E)
+Label(root,text="Journey Date",font='Arial 14 bold').grid(row=3,column=5,sticky=E)
 Entry(root).grid(row=3,column=6,sticky=W)
-Button(root,text='SHOW BUSES',fg='Black',bg='Green').grid(row=3,column=7)
+Button(root,text='SHOW BUSES',fg='Black',bg='Green',command=Show).grid(row=3,column=7)
 img1=PhotoImage(file='.\\home.png')
 Button(root,image=img1).grid(row=3,column=8)
+
 root.mainloop()
