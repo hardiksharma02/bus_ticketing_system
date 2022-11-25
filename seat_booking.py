@@ -1,7 +1,10 @@
 from tkinter import *
+from tkinter.messagebox import *
 root=Tk()
 w,k=root.winfo_screenwidth(),root.winfo_screenheight()
 root.geometry('%dx%d+0+0'%(w,k))
+def SHow():
+    showinfo("Fare Confirm","Total Amount to be paid is ____")
 options = [
     "Male",
     "Female",
@@ -22,7 +25,7 @@ def book():
     Entry(root).grid(row=10,column=8,sticky=W)
     Label(root,text="Age",font='Arial 14 bold').grid(row=10,column=9,sticky=E)
     Entry(root).grid(row=10,column=10,sticky=W)
-    Button(root,text="Book Seat",fg='Green',bg="White").grid(row=10,column=11,sticky=E)
+    Button(root,text="Book Seat",fg='Green',bg="White",command=SHow).grid(row=10,column=11,sticky=E)
 def Show():
     Label(root,text="Select Bus",font='Arial 14 bold',fg='Green').grid(row=5,column=1,sticky=E)
     Label(root,text="Operator",font='Arial 14 bold',fg='Green').grid(row=5,column=2,sticky=E)
