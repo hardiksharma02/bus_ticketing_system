@@ -12,3 +12,4 @@ Label(root,text="Mobile:9799444332" ,fg='blue',font='Arial 12 bold').grid(row=15
 Label(root,text="Submitted To: Dr. Mahesh Kumar",fg='red',bg='LightSkyBlue1',font='Arial 12 bold').grid(row=20,column=0,padx=w//3+10,pady=(50,10))
 Label(root,text="Project Based Learning",fg='red',font='Arial 12 bold').grid(row=25,column=0,padx=w//3+10,pady=(50,10))
 root.mainloop()
+#splash screen
