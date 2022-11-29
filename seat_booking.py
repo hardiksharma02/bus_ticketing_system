@@ -3,6 +3,9 @@ from tkinter.messagebox import *
 root=Tk()
 w,k=root.winfo_screenwidth(),root.winfo_screenheight()
 root.geometry('%dx%d+0+0'%(w,k))
+def home():
+    root.destroy()
+    import home
 def SHow():
     showinfo("Fare Confirm","Total Amount to be paid is ____")
 options = [
@@ -46,6 +49,6 @@ Label(root,text="Journey Date",font='Arial 14 bold').grid(row=3,column=5,sticky=
 Entry(root).grid(row=3,column=6,sticky=W)
 Button(root,text='SHOW BUSES',fg='Black',bg='Green',command=Show).grid(row=3,column=7)
 img1=PhotoImage(file='.\\home.png')
-Button(root,image=img1).grid(row=3,column=8)
+Button(root,image=img1,command=home).grid(row=3,column=8)
 
 root.mainloop()

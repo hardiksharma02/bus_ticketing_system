@@ -1,8 +1,14 @@
 from tkinter import *
+from tkinter.messagebox import *
 root=Tk()
 w,k=root.winfo_screenwidth(),root.winfo_screenheight()
 root.geometry('%dx%d+0+0'%(w,k))
 root.title("Bus Ticketing System")
+def done():
+    showinfo('bus entry',"Bus Record added")
+def home():
+    root.destroy()
+    import home
 options = [
     "AC 2X2",
     "AC 3X2",
@@ -30,8 +36,8 @@ Label(root,text='Operator Id',font='Arial 12 bold').grid(row=7,column=8,sticky=E
 Entry(root).grid(row=7,column=9,sticky=W)
 Label(root,text='Route Id',font='Arial 12 bold').grid(row=7,column=9,sticky=E)
 Entry(root).grid(row=7,column=10,sticky=W)
-Button(root,text="ADD",font='Arial 14 bold',fg='black',bg='Green2').grid(row=8,column=5)
+Button(root,text="ADD",font='Arial 14 bold',fg='black',bg='Green2',command=done).grid(row=8,column=5)
 Button(root,text="EDIT",font='Arial 14 bold',fg='black',bg='Orange').grid(row=8,column=6)
 img1=PhotoImage(file='.\\home.png')
-Button(root,image=img1).grid(row=8,column=7)
+Button(root,image=img1,command=home).grid(row=8,column=7)
 root.mainloop()

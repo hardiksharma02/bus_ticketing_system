@@ -1,6 +1,12 @@
 from tkinter import *
+from tkinter.messagebox import *
 root=Tk()
 w,k=root.winfo_screenwidth(),root.winfo_screenheight()
+def home():
+    root.destroy()
+    import home
+def done():
+    showinfo('operator entry',"opeartor record added")
 root.geometry('%dx%d+0+0'%(w,k))
 root.title("Bus Ticketing System")
 img=PhotoImage(file='.\\Bus_for_project.png')
@@ -17,8 +23,8 @@ Label(root,text='Phone No.',font='Arial 12 bold').grid(row=7,column=6,sticky=E)
 Entry(root).grid(row=7,column=7,sticky=W)
 Label(root,text='Email',font='Arial 12 bold').grid(row=7,column=8,sticky=E)
 Entry(root).grid(row=7,column=9,sticky=W)
-Button(root,text="ADD",font='Arial 14 bold',fg='black',bg='Green2').grid(row=7,column=10)
+Button(root,text="ADD",font='Arial 14 bold',fg='black',bg='Green2',command=done).grid(row=7,column=10)
 Button(root,text="EDIT",font='Arial 14 bold',fg='black',bg='Orange').grid(row=7,column=11)
 img1=PhotoImage(file='.\\home.png')
-Button(root,image=img1).grid(row=8,column=7)
+Button(root,image=img1,command=home).grid(row=8,column=7)
 root.mainloop()
